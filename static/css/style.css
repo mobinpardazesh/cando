@@ -1,0 +1,17 @@
+html,body{
+    margin: 0;
+    height: 100%;
+
+}
+div {
+    height: 100%;
+    width: 100%;
+    border: 25px groove rgb(184,147,147);
+    box-sizing: border-box;
+}
+div {
+    background: url(static/img/bee.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
