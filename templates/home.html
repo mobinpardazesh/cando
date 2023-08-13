@@ -5,7 +5,10 @@
     <title>Title</title>
     <style>
         body{
-            background-image: url("{% load static %}{% static '../static/img/bee.jpg' %}");
+            {#background-image: url("{% load static %}{% static 'static' %}");#}
+            {#background: url("{% static 'static/img/bee.jpg' %}");#}
+            background: url("static/img/bee.jpg");
+
 
         }
     </style>
