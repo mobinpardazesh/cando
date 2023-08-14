@@ -11,7 +11,7 @@ div {
 }
 div {
     background: url(static/img/bee.jpg);
-
+    background-color: red;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
