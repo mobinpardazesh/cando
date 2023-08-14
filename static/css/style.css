@@ -13,6 +13,6 @@ div {
 div {
     background: url('../img/be.jpg');
     background-repeat: no-repeat;
-    background-size:contain ;
+    background-size:cover ;
     background-position: center;
 }
