@@ -1,4 +1,4 @@
-{% load  static %}
+
 html,body{
     margin: 0;
     height: 100%;
@@ -11,8 +11,7 @@ div {
     box-sizing: border-box;
 }
 div {
-    background: url('static/img/bee.jpg');
-    background-color: red;
+    background: url('../img/bee.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
