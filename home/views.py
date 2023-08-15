@@ -19,7 +19,7 @@ def register(request):
 			return redirect("main:homepage")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = RegisterForm()
-	return render (request=request, template_name="register.html", context={"register_form":form})
+	return render (request=request, template_name="register.html", context={"register":form})
 def login (request):
 	return render(request,"login.html",{})
 # Create your  views here.
