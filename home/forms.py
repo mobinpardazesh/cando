@@ -10,11 +10,11 @@ from django.contrib.auth.models import User
 class RegisterForm(UserCreationForm):
 	student_name = forms.CharField(max_length=100)
 	student_familly = forms.CharField(max_length=100)
-	student_Age = forms.IntegerField()
-	student_fathername = forms.CharField()
-	student_email = forms.EmailField(required=True)
+	student_Age = forms.IntegerField(max_value=100)
+	student_fathername = forms.CharField(max_length=100)
 	USERNAME_FIELD=forms.CharField(max_length=100)
-	student_birthdate = forms.DateTimeField()
+	student_email = forms.EmailField(required=True)
+	# student_birthdate = forms.DateTimeField()
 	class Meta:
 		model = Student
 		fields = ("student_name", "student_familly", "student_Age", "student_fathername","USERNAME_FIELD","student_email")
@@ -25,8 +25,8 @@ class RegisterForm(UserCreationForm):
 		user.student_familly = self.cleaned_data['student_familly']
 		user.student_Age = self.cleaned_data['student_Age']
 		user.student_fathername = self.cleaned_data['student_fathername']
-		user.student_email = self.cleaned_data['student_email']
 		user.USERNAME_FIELD = self.cleaned_data['USERNAME_FIELD']
+		user.student_email = self.cleaned_data['student_email']
 
 		# user.student_birthdate = self.cleaned_data['student_birthdate']
 

@@ -6,9 +6,9 @@ class Student (models.Model):
     student_familly=models.CharField(max_length=100)
     student_Age=models.IntegerField(default=0)
     student_fathername=models.CharField(max_length=100)
-    student_email=models.EmailField(max_length=100)
     USERNAME_FIELD=models.CharField(max_length=100,default="user")
-    student_birthdate=models.DateTimeField(auto_now_add=True)
-    student_creatdate=models.DateTimeField(auto_now_add=True)
+    student_email=models.EmailField(max_length=100)
+    # student_birthdate=models.DateTimeField(auto_now_add=True)
+    # student_creatdate=models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.student_name
