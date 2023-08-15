@@ -20,7 +20,7 @@
 	<h1>Register Please ...</h1>
 	<form method="POST">
 		{% csrf_token %}
-        {{  register.email|as_crispy_field }}
+        {% crispy register %}
 {#		{{ register_form|crispy }}#}
 		<button class="btn btn-primary" type="submit">Register</button>
 	</form>
