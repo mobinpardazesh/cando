@@ -6,5 +6,4 @@ import home.models
 @admin.register(home.models.Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = (
-    "student_name", "student_familly", "student_Age", "student_fathername", "student_email","USERNAME_FIELD",
-    "student_creatdate")
+    "student_name", "student_familly", "student_Age", "student_fathername","USERNAME_FIELD", "student_email")
