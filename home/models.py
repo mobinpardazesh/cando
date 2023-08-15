@@ -10,3 +10,5 @@ class Student (models.Model):
     student_password=models.CharField(max_length=100)
     student_birthdate=models.DateTimeField(auto_now_add=True)
     student_creatdate=models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.student_name

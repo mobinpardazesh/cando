@@ -1,9 +1,6 @@
 from django.views.generic import TemplateView # Import TemplateView
-
-
-
 from django.shortcuts import  render, redirect
-from .forms import RegisterForm
+from home.forms import RegisterForm
 from django.contrib.auth import login
 from django.contrib import messages
 
