@@ -14,11 +14,10 @@ class RegisterForm(UserCreationForm):
 	student_fathername = forms.CharField()
 	student_email = forms.EmailField(required=True)
 	USERNAME_FIELD=forms.CharField(max_length=100)
-	student_password = forms.CharField(widget=forms.PasswordInput)
 	student_birthdate = forms.DateTimeField()
 	class Meta:
 		model = Student
-		fields = ("student_name", "student_familly", "student_Age", "student_fathername","USERNAME_FIELD","student_email","student_password")
+		fields = ("student_name", "student_familly", "student_Age", "student_fathername","USERNAME_FIELD","student_email")
 
 	def save(self, commit=True):
 		user = super(RegisterForm, self).save(commit=False)
@@ -27,7 +26,6 @@ class RegisterForm(UserCreationForm):
 		user.student_Age = self.cleaned_data['student_Age']
 		user.student_fathername = self.cleaned_data['student_fathername']
 		user.student_email = self.cleaned_data['student_email']
-		user.student_password = self.cleaned_data['student_password']
 		user.USERNAME_FIELD = self.cleaned_data['USERNAME_FIELD']
 
 		# user.student_birthdate = self.cleaned_data['student_birthdate']
