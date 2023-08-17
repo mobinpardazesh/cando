@@ -15,10 +15,10 @@ def register(request):
         student_Register_Form = Student_Register_Form(request.POST)
         if student_Register_Form.is_valid():
 		    new_student = student_Register_Form.save()
-        # login(request, new_student)
+            # login(request, new_student)
         messages.error(request, "Unsuccessful registration. Invalid information.")
-        messages.success(request, "Registration successful.")
         return redirect("cando:home")
+    messages.success(request, "Registration successful.")
     return render(request=request, template_name="register.html", context={"register": Student_Register_Form})
 
 
