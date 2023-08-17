@@ -17,7 +17,7 @@ def register(request):
             new_student = student_Register_Form.save()
             # login(request, new_student)
         messages.error(request, "Unsuccessful registration. Invalid information.")
-        return redirect("cando:home")
+        return redirect("cando:register")
     messages.success(request, "Registration successful.")
     return render(request=request, template_name="register.html", context={"register": Student_Register_Form})
 
