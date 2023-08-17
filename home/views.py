@@ -14,7 +14,7 @@ def register(request):
     if request.method == "POST":
         student_Register_Form = Student_Register_Form(request.POST)
         if student_Register_Form.is_valid():
-		    new_student = student_Register_Form.save()
+            new_student = student_Register_Form.save()
             # login(request, new_student)
         messages.error(request, "Unsuccessful registration. Invalid information.")
         return redirect("cando:home")
