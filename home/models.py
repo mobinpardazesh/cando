@@ -12,4 +12,4 @@ class Student (models.Model):
     # student_birthdate=models.DateTimeField(auto_now_add=True)
     # student_creatdate=models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return self.student_name
+        return f'{self.student_name} || {self.student_familly}  || {self.student_email}  || {self.student_fathername} || {self.student_username} || {self.student_Age}'
