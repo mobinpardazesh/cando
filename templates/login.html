@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends "home.html" %}
+{#{% extends "home.html" %}#}
 
 
 <html lang="en">
@@ -17,7 +17,8 @@
   <h1>Login</h1>
   <form method="POST">
     {% csrf_token %}
-    {{ login_form|crispy }}
+{#    {{ login_form|crispy }}#}
+      {{ login }}
     <button class="btn btn-primary" type="submit">Login</button>
   </form>
   <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
