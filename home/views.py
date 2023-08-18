@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView  # Import TemplateView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
-from home.forms import Student_Register_Form
+from home.forms import Student_Register_Form ,Student_Login_Form
 
 
 class Home(TemplateView):
@@ -25,18 +25,18 @@ def register(request):
 
 def login(request):
 	if request.method == "POST":
-		student_login_Form = AuthenticationForm(request, data=request.POST)
+		student_login_Form = Student_Login_Form(request)
 		if student_login_Form.is_valid():
-			username = student_login_Form.cleaned_data.get('username')
-			password = student_login_Form.cleaned_data.get('password')
+			username = student_login_Form.cleaned_data.get('student_username')
+			password = student_login_Form.cleaned_data.get('student_password')
 			student = authenticate(username=username, password=password)
 			if student is not None:
 				login(request, student)
 				messages.info(request, f"You are now logged in as {username}.")
-				return redirect("main:homepage")
+				return redirect("homepage")
 			else:
 				messages.error(request,"Invalid username or password.")
 		else:
 			messages.error(request,"Invalid username or password.")
-	form = AuthenticationForm()
-	return render(request=request, template_name="login.html", context={"login":Student_Register_Form})
+	form = Student_Login_Form()
+	return render(request=request, template_name="login.html", context={"login":Student_Login_Form})
