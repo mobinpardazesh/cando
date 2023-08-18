@@ -58,11 +58,28 @@
         <span class="message-close error">x</span>
     </div>
     <!--end messages-->
-    <form method="post" action=".">
-      {% csrf_token %}
-      {{signup_form}}
-      <input type="submit" value="Sign up">
-    </form>
+    <form method="POST" actione="." class="login-form spacer" id="signup-form">
+                {% csrf_token %}
+
+                    <div class="input-group">
+                        <img class="icon input-icon" src="{% static 'icons/profile-user.svg' %}" alt="">
+                        {{signup_form.username}}
+                    </div>
+                    <div class="input-group">
+                        <img class="icon input-icon" src="{% static 'icons/envelope.png' %}" alt="">
+                        {{signup_form.email}}
+                    </div>
+                    <div class="input-group">
+                        <img class="icon input-icon" src="{% static 'icons/key.svg' %}" alt="">
+                        {{signup_form.password1}}
+                    </div>
+                    <div class="input-group">
+                        <img class="icon input-icon" src="{% static 'icons/key.svg' %}" alt="">
+                        {{signup_form.password2}}
+                    </div>
+
+                    <input type="submit" class="submit" value="Signup">
+                </form>
     <div class="container">
         <div class="card center spacer">
             <h1 class="title text-center">Register With</h1>
