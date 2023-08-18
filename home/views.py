@@ -11,7 +11,7 @@ class Home(TemplateView):
     template_name = "home.html"
 
 
-def register(request):
+def signup(request):
     if request.method == "POST":
         student_Register_Form = Student_Register_Form(request.POST)
         if student_Register_Form.is_valid():
@@ -40,3 +40,12 @@ def login(request):
 			messages.error(request,"Invalid username or password.")
 	form = Student_Login_Form()
 	return render(request=request, template_name="login.html", context={"login":Student_Login_Form})
+
+def  check_email(request):
+	return  render(request,template_name="check-email.html",context="check-email":Check_Email_Form)
+
+def  forget_password(request):
+	return  render(request,template_name="check-email.html",context="forget_password":forget_Password_Form)
+
+def  reset_password(request):
+	return  render(request,template_name="reset-password.html",context="reset_password":Reset_Password_Form)
