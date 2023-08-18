@@ -45,7 +45,7 @@ def  check_email(request):
 	return  render(request,template_name="check-email.html",context="check-email":Check_Email_Form)
 
 def  forget_password(request):
-	return  render(request,template_name="check-email.html",context="forget_password":forget_Password_Form)
+	return  render(request,template_name="check-email.html",context="forget_password":Forget_Password_Form)
 
 def  reset_password(request):
 	return  render(request,template_name="reset-password.html",context="reset_password":Reset_Password_Form)
