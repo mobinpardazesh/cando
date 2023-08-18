@@ -58,6 +58,21 @@
         <span class="message-close error">x</span>
     </div>
     <!--end messages-->
+
+    <div class="container">
+        <div class="card center spacer">
+            <h1 class="title text-center">Register With</h1>
+            <div class="social-login">
+                <button class="social-btn">
+                    <img class="icon" src="/static/icons/gmail.svg" alt="gmail icon">
+                    Gmail
+                </button>
+                <button class="social-btn">
+                    <img class="icon" src="/static/icons/facebook.svg" alt="gmail icon">
+                    Facebook
+                </button>
+            </div>
+            <div class="text-center line form-divider">or</div>
     <form method="POST" actione="." class="login-form spacer" id="signup-form">
                 {% csrf_token %}
 
@@ -80,21 +95,6 @@
 
                     <input type="submit" class="submit" value="Signup">
                 </form>
-    <div class="container">
-        <div class="card center spacer">
-            <h1 class="title text-center">Register With</h1>
-            <div class="social-login">
-                <button class="social-btn">
-                    <img class="icon" src="/static/icons/gmail.svg" alt="gmail icon">
-                    Gmail
-                </button>
-                <button class="social-btn">
-                    <img class="icon" src="/static/icons/facebook.svg" alt="gmail icon">
-                    Facebook
-                </button>
-            </div>
-            <div class="text-center line form-divider">or</div>
-
 
         </div>
 
