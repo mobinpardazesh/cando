@@ -10,7 +10,7 @@ class Student(models.Model):
     student_Age = models.IntegerField(default=0)
     student_fathername = models.CharField(max_length=100)
     student_username = models.CharField(max_length=100)
-    student_password = models.CharField(max_length=100)
+    student_password = models.CharField(max_length=100,default="123")
     student_email = models.EmailField(max_length=100)
 
     # student_birthdate=models.DateTimeField(auto_now_add=True)

@@ -21,7 +21,10 @@ class Student_Register_Form(ModelForm):
 	student_password=forms.CharField(widget=forms.PasswordInput)
 	class Meta:
 		model = Student
-		fields = ("student_name", "student_familly", "student_Age", "student_fathername","student_username","student_password","student_email")
+		fields = ["student_name", "student_familly", "student_Age", "student_fathername","student_username","student_password","student_email"]
+		widgets={
+			"student_password":forms.PasswordInput
+		}
 		error_messages = {
 					NON_FIELD_ERRORS: {
 						"unique_together": "%(model_name)s's %(field_labels)s are not unique.",
@@ -43,10 +46,9 @@ class Student_Register_Form(ModelForm):
 			user.save()
 		return user
 class Student_Login_Form(ModelForm):
-
-	student_password=forms.CharField(widget=forms.PasswordInput)
-	class Meta:
-		model=Student
-
-	fields = (
-	"student_username", "student_password")
+		class Meta:
+			model= Student
+			fields = ["student_username", "student_password"]
+			widgets = {
+				"student_password": forms.PasswordInput
+			}
