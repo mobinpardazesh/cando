@@ -18,9 +18,10 @@ class Student_Register_Form(ModelForm):
 	# student_username=forms.CharField(max_length=100)
 	# student_email = forms.EmailField(required=True)
 	# # student_birthdate = forms.DateTimeField()
+	student_password=forms.CharField(widget=forms.PasswordInput)
 	class Meta:
 		model = Student
-		fields = ("student_name", "student_familly", "student_Age", "student_fathername","student_username","student_email")
+		fields = ("student_name", "student_familly", "student_Age", "student_fathername","student_username","student_password","student_email")
 		error_messages = {
 					NON_FIELD_ERRORS: {
 						"unique_together": "%(model_name)s's %(field_labels)s are not unique.",
@@ -33,11 +34,19 @@ class Student_Register_Form(ModelForm):
 		user.student_Age = self.cleaned_data['student_Age']
 		user.student_fathername = self.cleaned_data['student_fathername']
 		user.student_username = self.cleaned_data['student_username']
+		user.Student_password=self.cleaned_data['student_password']
 		user.student_email = self.cleaned_data['student_email']
-
 		# user.student_birthdate = self.cleaned_data['student_birthdate']
 		# student_Register_Form = Student_Register_Form(request.POST)
 
 		if commit:
 			user.save()
 		return user
+class Student_Login_Form(ModelForm):
+
+	student_password=forms.CharField(widget=forms.PasswordInput)
+	class Meta:
+		model=Student
+
+	fields = (
+	"student_username", "student_password")
