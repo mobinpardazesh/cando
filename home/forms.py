@@ -107,6 +107,9 @@ class Student_Login_Form(ModelForm):
             "student_password": forms.PasswordInput
         }
 
+class Login_Form(ModelForm):
+    class Meta:
+        pass
 
 class Check_Email_Form(ModelForm):
     pass

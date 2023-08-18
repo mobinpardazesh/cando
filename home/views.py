@@ -37,23 +37,24 @@ def signup(request):
     return render(request, 'signup.html', context)
 
 
-# def login(request):
-# 	if request.method == "POST":
-# 		student_login_Form = Student_Login_Form(request)
-# 		if student_login_Form.is_valid():
-# 			username = student_login_Form.cleaned_data.get('student_username')
-# 			password = student_login_Form.cleaned_data.get('student_password')
-# 			student = authenticate(username=username, password=password)
-# 			if student is not None:
-# 				login(request, student)
-# 				messages.info(request, f"You are now logged in as {username}.")
-# 				return redirect("homepage")
-# 			else:
-# 				messages.error(request,"Invalid username or password.")
-# 		else:
-# 			messages.error(request,"Invalid username or password.")
-# 	form = Student_Login_Form()
-# 	return render(request=request, template_name="login.html", context={"login":Student_Login_Form})
+def login(request):
+    if request.method == "POST":
+        student_login_Form = Student_Login_Form(request)
+        if student_login_Form.is_valid():
+            username = student_login_Form.cleaned_data.get('student_username')
+            password = student_login_Form.cleaned_data.get('student_password')
+            student = authenticate(username=username, password=password)
+            if student is not None:
+                login(request, student)
+                messages.info(request, f"You are now logged in as {username}.")
+                return redirect("homepage")
+            else:
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    form = Student_Login_Form()
+    return render(request=request, template_name="login.html", context={"login": Student_Login_Form})
+
 
 def check_email(request):
     return render(request, template_name="check-email.html", context={"check-email": Check_Email_Form})
