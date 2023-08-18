@@ -20,7 +20,7 @@ def register(request):
         messages.error(request, "Unsuccessful registration. Invalid information.")
         return redirect("cando:register")
     messages.success(request, "Registration successful.")
-    return render(request=request, template_name="register.html", context={"register": Student_Register_Form})
+    return render(request=request, template_name="signup.html", context={"register": Student_Register_Form})
 
 
 def login(request):
