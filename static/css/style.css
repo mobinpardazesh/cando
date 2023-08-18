@@ -1,21 +1,21 @@
 
-html,body{
-    margin: 0;
-    height: 100%;
+/*html,body{*/
+/*    margin: 0;*/
+/*    height: 100%;*/
 
-}
-#home_body {
-    height: 100%;
-    width: 100%;
-    border: 25px groove rgb(184,147,147);
-    box-sizing: border-box;
-}
-#home_body {
-    background: url('../img/be.jpg');
-    background-repeat: no-repeat;
-    background-size:cover ;
-    background-position: center;
-}
+/*}*/
+/*#home_body {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    border: 25px groove rgb(184,147,147);*/
+/*    box-sizing: border-box;*/
+/*}*/
+/*#home_body {*/
+/*    background: url('../img/be.jpg');*/
+/*    background-repeat: no-repeat;*/
+/*    background-size:cover ;*/
+/*    background-position: center;*/
+/*}*/
 
 
 /*####################
