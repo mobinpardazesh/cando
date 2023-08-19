@@ -99,6 +99,8 @@ class Student_Register_Form(ModelForm):
         return user
 
 
+class Login_Form(ModelForm):
+    pass
 class Student_Login_Form(ModelForm):
     class Meta:
         model = Student

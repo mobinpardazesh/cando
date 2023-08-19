@@ -2,7 +2,7 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 
 from .forms import Check_Email_Form, Forget_Password_Form, Reset_Password_Form
-from .forms import SignUpForm
+from .forms import SignUpForm ,Login_Form
 
 
 # class Home(TemplateView):
@@ -39,7 +39,7 @@ def signup(request):
 
 def login(request):
     if request.method == "POST":
-        student_login_Form = Student_Login_Form(request)
+        student_login_Form = Login_Form(request)
         if student_login_Form.is_valid():
             username = student_login_Form.cleaned_data.get('student_username')
             password = student_login_Form.cleaned_data.get('student_password')
@@ -52,8 +52,8 @@ def login(request):
                 messages.error(request, "Invalid username or password.")
         else:
             messages.error(request, "Invalid username or password.")
-    form = Student_Login_Form()
-    return render(request=request, template_name="login.html", context={"login": Student_Login_Form})
+    form = Login_Form()
+    return render(request=request, template_name="login.html", context={"login": Login_Form})
 
 
 def check_email(request):

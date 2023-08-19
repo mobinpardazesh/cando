@@ -25,17 +25,25 @@
                 </button>
             </div>
             <div class="text-center line form-divider">or</div>
-            <form action="" class="login-form spacer">
-                <div class="input-group">
-                    <img class="icon input-icon" src="/static/icons/envelope.png" alt="">
-                    <input type="email" class="form-input" placeholder="johndoe@mail.com">
-                </div>
-                <div class="input-group">
-                    <img class="icon input-icon" src="/static/icons/key.svg" alt="">
-                    <input type="password" class="form-input" placeholder="password">
-                </div>
-                <input type="submit" class="submit" value="Login">
-            </form>
+    <form method="get" class="login-form spacer" id="signup-form">
+                    <div class="input-group">
+                        <img class="icon input-icon" src="/static/icons/profile-user.svg" alt="">
+                        <input required name="username" id="username" type="text" class="form-input" placeholder="john doe" maxlength="16" minlength="6">
+                    </div>
+                    <div class="input-group">
+                        <img class="icon input-icon" src="/static/icons/envelope.png" alt="">
+                        <input required name="email" id="email" type="email" class="form-input" placeholder="johndoe@mail.com">
+                    </div>
+                    <div class="input-group">
+                        <img class="icon input-icon" src="/static/icons/key.svg" alt="">
+                        <input required name="password1" id="password1" type="password" class="form-input" placeholder="password" maxlength="22" minlength="8">
+                    </div>
+                    <div class="input-group">
+                        <img class="icon input-icon" src="/static/icons/key.svg" alt="">
+                        <input required name="password2" id="password2" type="password" class="form-input" placeholder=" confirm password" maxlength="22" minlength="8">
+                    </div>
+                    <input type="submit" class="submit" value="Signup">
+                </form>
 
         </div>
 
