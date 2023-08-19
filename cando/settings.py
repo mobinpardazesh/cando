@@ -117,6 +117,8 @@ USE_TZ = False
 
 STATIC_URL = 'static/'
 STATIC_ROOT = 'static'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 # STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
 #
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -128,3 +130,4 @@ STATIC_ROOT = 'static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+LOGIN_URL = 'login'

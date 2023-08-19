@@ -1,9 +1,10 @@
 from django.contrib.auth import login, authenticate,logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 # from .forms import Check_Email_Form, Forget_Password_Form, Reset_Password_Form
 from .forms import LoginForm ,SignUpForm
 from django.contrib import messages
-
+from django.views import View
 
 def sign_up(request):
     signup_form = SignUpForm(request.POST)
@@ -55,3 +56,41 @@ def sign_out(request):
 #
 # def reset_password(request):
 #     return render(request, template_name="users/reset-password.html", context={"reset_password": Reset_Password_Form})
+class MyProfile(LoginRequiredMixin, View):
+    def get(self, request):
+        user_form = UserUpdateForm(instance=request.user)
+        profile_form = ProfileUpdateForm(instance=request.user.profile)
+
+        context = {
+            'user_form': user_form,
+            'profile_form': profile_form
+        }
+
+        return render(request, 'users/profile.html', context)
+
+    def post(self, request):
+        user_form = UserUpdateForm(
+            request.POST,
+            instance=request.user
+        )
+        profile_form = ProfileUpdateForm(
+            request.POST,
+            request.FILES,
+            instance=request.user.profile
+        )
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+
+            messages.success(request, 'Your profile has been updated successfully')
+
+            return redirect('profile')
+        else:
+            context = {
+                'user_form': user_form,
+                'profile_form': profile_form
+            }
+            messages.error(request, 'Error updating you profile')
+
+            return render(request, 'users/profile.html', context)
