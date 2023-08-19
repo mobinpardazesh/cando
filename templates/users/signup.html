@@ -44,13 +44,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <script src="/static/js/scripts.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/scripts.js" defer></script>
 </head>
 <body>
     <!--messages-->
     <div class="messages">
-        <img class="message-icon" src="/static/icons/sign.svg" alt="error">
+        <img class="message-icon" src="/users/icons/sign.svg" alt="error">
         <div class="message">
             <h3 class="message-title title">Error</h3>
             <p class="message-paragraph">Something went wrong!</p>
@@ -64,11 +64,11 @@
             <h1 class="title text-center">Register With</h1>
             <div class="social-login">
                 <button class="social-btn">
-                    <img class="icon" src="/static/icons/gmail.svg" alt="gmail icon">
+                    <img class="icon" src="/users/icons/gmail.svg" alt="gmail icon">
                     Gmail
                 </button>
                 <button class="social-btn">
-                    <img class="icon" src="/static/icons/facebook.svg" alt="gmail icon">
+                    <img class="icon" src="/users/icons/facebook.svg" alt="gmail icon">
                     Facebook
                 </button>
             </div>
@@ -77,19 +77,19 @@
                 {% csrf_token %}
 
                     <div class="input-group">
-                        <img class="icon input-icon" src="{% static 'icons/profile-user.svg' %}" alt="">
+                        <img class="icon input-icon" src="{% static 'icons/../static/users/icons/profile-user.svg' %}" alt="">
                         {{signup_form.username}}
                     </div>
                     <div class="input-group">
-                        <img class="icon input-icon" src="{% static 'icons/envelope.png' %}" alt="">
+                        <img class="icon input-icon" src="{% static 'icons/../static/users/icons/envelope.png' %}" alt="">
                         {{signup_form.email}}
                     </div>
                     <div class="input-group">
-                        <img class="icon input-icon" src="{% static 'icons/key.svg' %}" alt="">
+                        <img class="icon input-icon" src="{% static 'icons/../static/users/icons/key.svg' %}" alt="">
                         {{signup_form.password1}}
                     </div>
                     <div class="input-group">
-                        <img class="icon input-icon" src="{% static 'icons/key.svg' %}" alt="">
+                        <img class="icon input-icon" src="{% static 'icons/../static/users/icons/key.svg' %}" alt="">
                         {{signup_form.password2}}
                     </div>
 
