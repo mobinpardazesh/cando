@@ -1,4 +1,4 @@
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate,logout
 from django.shortcuts import render, redirect
 # from .forms import Check_Email_Form, Forget_Password_Form, Reset_Password_Form
 from .forms import LoginForm ,SignUpForm
@@ -34,11 +34,15 @@ def sign_in(request):
             if user:
                 login(request, user)
                 messages.success(request, f'Hi {username.title()}, welcome back!')
-                return redirect('posts')
+                return redirect('home')
 
         # form is not valid or user is not authenticated
         messages.error(request, f'Invalid username or password')
         return render(request, 'users/login.html', {'login': form})
+def sign_out(request):
+    logout(request)
+    messages.success(request,f'You have been logged out.')
+    return redirect('login')
 #
 #
 # def check_email(request):
