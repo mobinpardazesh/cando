@@ -45,7 +45,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/scripts.js" defer></script>
+    <script src="/users/js/users.js" defer></script>
 </head>
 <body>
     <!--messages-->
@@ -77,19 +77,19 @@
                 {% csrf_token %}
 
                     <div class="input-group">
-                        <img class="icon input-icon" src="{% static 'icons/../static/users/icons/profile-user.svg' %}" alt="">
+                        <img class="icon input-icon" src="{% static 'users/icons/profile-user.svg' %}" alt="">
                         {{signup_form.username}}
                     </div>
                     <div class="input-group">
-                        <img class="icon input-icon" src="{% static 'icons/../static/users/icons/envelope.png' %}" alt="">
+                        <img class="icon input-icon" src="{% static 'users/icons/envelope.png' %}" alt="">
                         {{signup_form.email}}
                     </div>
                     <div class="input-group">
-                        <img class="icon input-icon" src="{% static 'icons/../static/users/icons/key.svg' %}" alt="">
+                        <img class="icon input-icon" src="{% static 'users/icons/key.svg' %}" alt="">
                         {{signup_form.password1}}
                     </div>
                     <div class="input-group">
-                        <img class="icon input-icon" src="{% static 'icons/../static/users/icons/key.svg' %}" alt="">
+                        <img class="icon input-icon" src="{% static 'users/icons/key.svg' %}" alt="">
                         {{signup_form.password2}}
                     </div>
 
