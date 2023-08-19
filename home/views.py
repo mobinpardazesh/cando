@@ -4,5 +4,5 @@ from django.shortcuts import render, redirect
 # class Home(TemplateView):
 #     template_name = "home.html"
 def home(request):
-    return render(request, template_name="home.html", context={"home": home})
+    return render(request, template_name="home/home.html", context={"home": home})
 
