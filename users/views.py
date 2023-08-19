@@ -22,8 +22,8 @@ def sign_up(request):
 
 def sign_in(request):
     if request.method == "GET":
-        loginform = LoginForm()
-        return render(request, template_name="users/login.html", context={"login": loginform})
+        form = LoginForm()
+        return render(request, template_name="users/login.html", context={"login": form})
 #
 #
 # def check_email(request):
