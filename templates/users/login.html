@@ -4,7 +4,7 @@
 <form method="POST" novalidate>
         {% csrf_token %}
         <h2>Login</h2>
-        {{form.as_p}}
+        {{form}}
         <input type="submit" value="Login" />
 </form>
 {% endblock content %}
